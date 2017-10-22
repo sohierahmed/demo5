@@ -1,5 +1,4 @@
 package com.example.sohier_ahmed.httprequest;
-
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,7 +9,6 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.android.volley.NoConnectionError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -20,20 +18,12 @@ import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.Authenticator;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     JSONObject parent;
@@ -62,8 +52,7 @@ public class MainActivity extends AppCompatActivity {
                     dbHelper.CreateDB();
 
                     dbHelper.OpenDB();
-//                    // Toast.makeText(this,"after OpenDB db",Toast.LENGTH_LONG).show();
-                    final Cursor cursor=  dbHelper.GetSheetNames();
+                     final Cursor cursor=  dbHelper.GetSheetNames();
 
                 try {
                     parent=EncodeCursorToJSON(cursor);
@@ -83,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                   // String str = json.getJSONObject("data").toString();
+                   
                     lst=new ArrayList<>();
                     String json=parent.toString();
 
